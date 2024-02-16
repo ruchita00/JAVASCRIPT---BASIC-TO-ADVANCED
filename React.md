@@ -41,5 +41,40 @@ function ExpensiveComponent({ value }) {
   return <div>{expensiveResult}</div>;
 }
 
+# 2.what is pure component?
+- pure component is similar to component but it skips re-renders for same props and state.
+
+# 3.What is higher order component?
+- A higher order component is design pattern in react that allows you to use component logic and share functionality between components.
+- it is function that takes a component as input and returns a new component with enhanced capabilities.
+
+     - Accepts a component: a hoc takes a component as an argument
+     - return a new component: it returns a new component that wraps the original component
+     - enhances functionality: The new component enhances the functionality of the original component by adding additional props state or behavior
+     - Reusability: higher order component pormote reusability by encapsulating common functionality in a seperate function making it easier to apply that functionality to multiple components
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
