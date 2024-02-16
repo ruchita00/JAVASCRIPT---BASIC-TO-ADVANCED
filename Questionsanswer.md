@@ -84,8 +84,7 @@ output : i am outer function
    - They help bridge the gap between old and new technologies ensuring a more consistent user experience across different browsers
 
 # 9.Write a polyfill for map?
-- 
-   Array.prototype.myMap=function(cb){
+- Array.prototype.myMap=function(cb){
      let temp=[]
      for(let i=0;i<this.length;i++){
         temp.push(cb(this[i],i,this))
@@ -94,8 +93,7 @@ output : i am outer function
    }
 
 # 10.Write a polyfill for filter?
-- 
-Array.protoType.myFilter=function(cb){
+- Array.protoType.myFilter=function(cb){
     let temp=[]
     for(let i=0;i<this.length;i++){
         if(cb(this[i],i,this)){
@@ -106,9 +104,7 @@ Array.protoType.myFilter=function(cb){
 }
 
 # 11.Write a polyfill for reduce?
-- 
-
-Array.prototype.myReduce=function(initialValue,cb){
+- Array.prototype.myReduce=function(initialValue,cb){
     var accumulator=initialValue;
 
     for(let i=0;i<this.length;i++){
@@ -118,7 +114,69 @@ Array.prototype.myReduce=function(initialValue,cb){
 }
 
 #  12.what is the difference between promises and callback?
-- 
+- Promises and callbacks are both mechanisms used in javscript for handling asynchronous operations,but they have some key differences:
+
+   - Callback: 
+       - Callbacks are functions passed as arguments to another function, typically to be executed once an asynchronous operation is completed.
+       - callbacks were the traditional way of handling asychronous operations in javascript before teh introduction of promises.
+       Cllbacks can lead to callback hell or pymid of doom when multiple asynchronous operations are nested within each other, making the code harder to read and maintain.
+
+       - example:
+          
+          function fetchData(callback){
+            setTimeout(()=>{
+                const data= "some data"
+                callback(data) //call the callback function with the result
+            },1000)
+          }
+
+          fetchData(data=>{
+            console.log(data)
+          })
+       
+    - Promise:
+       - Promises are the object representing the eventual completion or failture of an asunchronous operation.
+       - promises were introduce in es6 to provide a cleaner and more structured way of handling asychronous code compared to callbacks.
+       - Promises have built in methods like .then() and .catch() for handling and resloed value or rejection reason of the promise respectively
+       - promises can be chained together allowing for more readable and sequential asynchronous code.
+
+       - example
+        
+
+        function fetchData(){
+            return new Promise((resolve,reject)=>{
+                setTimout(()=>{
+              const data='some data'
+              resolve(data)
+                },1000)
+            })
+        }
+        
+        fetchData.then((data)=>console.log(data)).catch(erro=>console.log(error))
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
