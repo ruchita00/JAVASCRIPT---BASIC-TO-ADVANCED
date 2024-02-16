@@ -155,7 +155,8 @@ output : i am outer function
         fetchData.then((data)=>console.log(data)).catch(erro=>console.log(error))
 
 
-  - In summary while both callbacks and promises are used for handling asynchronous opeations in javascript promises offers a more structure and readable approach, avoiding the callback hell problem and providing built in error handling mechanisms
+  - In summary while both callbacks and promises are used for handling asynchronous opeations in javascript promises offers a more structure and readable approach, avoiding the callback hell problem and providing built in error handling mechanisms.
+
 
 
 
