@@ -59,6 +59,101 @@ const innerfunc=outer()
 inner() 
 output : i am outer function
 
+# 8.What is polyfill?
+- Polyfill is piece of code that provides functionality of nwer browser features to old browser features that do not support those features natively 
+   - New Features:
+      - as web standards evolve new features are introduced to js, html,css.
+      - these features often enhance the capabilities of web application and making them more powerful and efficient.
+  
+    - brower Support:
+       -however older broswer may not support these new featurs leading to compatibility issues.
+       - users of these older browser would miss out on the benefits of these new features
+
+     - Polyfill to rescue:
+       - A polyfill is essentially a script that detects whether a certain browser features is supported.
+       - if the features is not supported the polyfill provides its own implementation of that featur, enabling the functionality in older browsers.
+
+    - Usages:
+      - developers includes polyfills in their web application to ensure that the application works consistently across different browsers regardless of their level of support for new features.
+      - example: Array.prototype.map()
+
+      
+    polyfills are particularly useful during transitional periods when developers are adopting new web standards but still need to support older browser 
+
+
+   - They help bridge the gap between old and new technologies ensuring a more consistent user experience across different browsers
+
+# 9.Write a polyfill for map?
+- 
+   Array.prototype.myMap=function(cb){
+     let temp=[]
+     for(let i=0;i<this.length;i++){
+        temp.push(cb(this[i],i,this))
+     }
+     return temp
+   }
+
+# 10.Write a polyfill for filter?
+- 
+Array.protoType.myFilter=function(cb){
+    let temp=[]
+    for(let i=0;i<this.length;i++){
+        if(cb(this[i],i,this)){
+            temp.push(this[i])
+        }
+    }
+    return temp
+}
+
+# 11.Write a polyfill for reduce?
+- 
+
+Array.prototype.myReduce=function(initialValue,cb){
+    var accumulator=initialValue;
+
+    for(let i=0;i<this.length;i++){
+      accumulator=accumulator?cb(accumulator, this[i],i,this):this[i]
+    }
+    return accumulator
+}
+
+#  12.what is the difference between promises and callback?
+- 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
