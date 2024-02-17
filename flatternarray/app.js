@@ -5,21 +5,16 @@ let arr = [
   [10, 11, 12],
 ];
 
-let flatternArray = [].concat(...arr);
-console.log(flatternArray);
-
-console.log(arr.flat(2));
-
 function customFlat(arr, depth = 1) {
   let result = [];
-  arr.forEach((ar) => {
-    if (Array.isArray(ar) && depth > 0) {
-      result.push(...customFlat(ar, (depth = 1)));
+  arr.forEach((arr) => {
+    if (Array.isArray(arr) && depth > 0) {
+      result.push(...customFlat(arr, depth - 1));
     } else {
-      result.push(ar);
+      result.push(arr);
     }
   });
   return result;
 }
 
-console.log(customFlat(arr));
+console.log(customFlat(arr, 2));

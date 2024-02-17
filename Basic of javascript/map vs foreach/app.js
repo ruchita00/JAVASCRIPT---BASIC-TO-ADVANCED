@@ -39,18 +39,21 @@ console.log(null === undefined); //false - compare equality with matching their 
 
 /**
  * 3. explain event delegation?
- * event delegation is javacript programming pattern where you attach a single event lister
- * a parent element to manage events for all of its child elements. instead
+ * event delegation is javacript programming pattern where you attach a
+ *  single event lister
+ * a parent element to manage events for all of its child elements.
+ *  instead
  * of attaching individual event listners to each child component.
  *
  * attach event lister to parent component:
- * you attached an event listner to a parent elements that contains all the
+ * you attached an event listner to a parent elements that contains
+ *  all the
  * child element you re interested in
  *
  * use of event target:
  * when an event occurs the event babbles up through the dom hierarchy
- * you use event.target properly to identify the specific child element that triggered the event
- *
+ * you use event.target properly to identify the specific child
+ * element that triggered the event
  */
 
 document.querySelector("#products").addEventListener("click", (e) => {
