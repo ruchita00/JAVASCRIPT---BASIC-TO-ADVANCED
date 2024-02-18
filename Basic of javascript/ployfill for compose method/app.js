@@ -46,6 +46,27 @@ function customFlat(arr, depth = 1) {
   return result;
 }
 
-
-
 console.log(customFlat(arr, 5));
+
+// explain the call method
+
+const sample = {
+  name: "ruchi",
+  hello: function (inter) {
+    console.log(this.name + " Says Hello " + inter);
+  },
+};
+
+const newSample = {
+  name: "tina",
+};
+
+sample.hello.call(newSample, "world");
+
+//explain the apply
+
+sample.hello.apply(newSample, ["world"]);
+
+const newBind = sample.hello.bind(newSample);
+
+newBind("world");
