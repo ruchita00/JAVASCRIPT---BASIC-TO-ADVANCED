@@ -48,3 +48,9 @@ var namste = {
 let newBindData = dummyData.hello.bind(namste);
 
 newBindData("world");
+
+for (var i = 1; i <= 3; i++) {
+  setTimeout(() => {
+    console.log(i);
+  }, 1000);
+}

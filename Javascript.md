@@ -60,7 +60,7 @@ inner()
 output : i am outer function
 
 # 8.What is polyfill?
-- Polyfill is piece of code that provides functionality of nwer browser features to old browser features that do not support those features natively 
+- Polyfill is piece of code that provides functionality of newr browser features to old browser features that do not support those features natively 
    - New Features:
       - as web standards evolve new features are introduced to js, html,css.
       - these features often enhance the capabilities of web application and making them more powerful and efficient.
@@ -156,6 +156,62 @@ output : i am outer function
 
 
   - In summary while both callbacks and promises are used for handling asynchronous opeations in javascript promises offers a more structure and readable approach, avoiding the callback hell problem and providing built in error handling mechanisms.
+
+
+# 13explain the differnce between arrow function and callback function?
+
+- arrow function have a more concies syntax as compare to regular functions
+- arrtotype  functions do not have their own this argemnt super or new.target bindings which means they inherit these form surronding lexical context.
+- arrow functions do not have proptype property
+
+- in arrow function the value of this is lexically scoped meaning it is determined by surrounding code when arrow fuction is defined
+- in regular function they value of this is determined by how the fucntion is called which can lead to unexpected behavior especially in nested functions or when dealing with event handler
+
+- arrow function do not have their own argments object if you need to access argumnets you would used the arguments object of the enclosing non arrow fucntion
+- regular function have their own arguments object which contains all arguments passed to the function
+
+- arrow function are often used for short concies function expressions especially when defining callback functions or when wrting functional style code
+- regular function are more versatile and can be used in wider range of scenarios including as object methods contructors or when you need explicit control over the value of this
+
+// Regular function
+function regularFunction(x, y) {
+    return x + y;
+}
+
+// Arrow function
+const arrowFunction = (x, y) => x + y;
+
+
+
+# 14. explain event delegation?
+  event delegation is javacript programming pattern where you attach a
+   single event lister
+  a parent element to manage events for all of its child elements.
+   instead
+  of attaching individual event listners to each child component.
+ 
+  attach event lister to parent component:
+  you attached an event listner to a parent elements that contains
+   all the
+  child element you re interested in
+ 
+  use of event target:
+  when an event occurs the event babbles up through the dom hierarchy
+  you use event.target properly to identify the specific child
+  element that triggered the event
+
+ - event bubbing:
+   - when an event occcurs on a descendant element such as click event on a button inside a div element the event bubbles up through the DOM tree this means that event occurs on the target element
+    it also triggers the same event on each ancestor element all the way up to the root of the document
+    
+
+
+
+
+
+
+
+
 
 
 

@@ -28,3 +28,18 @@
   - display none: when you want to completely remove an element from the layout and make it inaccessible to users
   - visibility: hidden: when you want to hide an element visually but still maintain its layout properties and accessbility
   
+
+  # 3difference betweeen margin and padding?
+
+  - margin: 
+    - margin ars pace outsde of an elements border
+    - they create space between the element and its adjecent elements
+    - margins can set using properties like mt, pl, mr, pb
+
+  - padding:
+    - padding is the space between an elements content and its border
+    - it create space inside the element
+    - padding can be set using properties like padding-top padding right padding bottom and padding left
+    - padding does not collapse if two adjacent elements have padding they will both be applied independently
+
+    
