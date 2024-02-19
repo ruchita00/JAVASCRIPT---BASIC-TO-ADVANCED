@@ -141,3 +141,21 @@ function reverseString(str) {
 const inputString = "Hello world!";
 const reversedString = reverseString(inputString);
 console.log("Reversed string:", reversedString);
+
+function resverseStr(str) {
+  str = str + " ";
+  let str1 = "";
+  let newString = [];
+  for (let i = 0; i < str.length; i++) {
+    str1 = str[i] + str1;
+    if (str[i] === " ") {
+      newString.push(str1);
+      str1 = "";
+    } else {
+    }
+  }
+  console.log(newString);
+  return newString.join("");
+}
+
+console.log(resverseStr("hello world"));

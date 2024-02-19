@@ -22,3 +22,35 @@ function customPromise(promises) {
 Promise.all([showText("hello", 1000), Promise.resolve("hi", 1000)]).then(
   (res) => console.log(res)
 );
+
+function resverseStr(str) {
+  str = str + " ";
+  let str1 = "";
+  let newString = "";
+  for (let i = 0; i < str.length; i++) {
+    str1 = str[i] + str1;
+    if (str[i] === " ") {
+      newString = newString + str1;
+      str1 = "";
+    }
+  }
+  console.log(newString);
+  return newString;
+}
+
+function resversenewString(str) {
+  str = str + " ";
+  let str1 = "";
+  let result = "";
+
+  for (let i = 0; i < str.length; i++) {
+    str1 = str[i] + str1;
+    if (str[i] === " ") {
+      result = result + str1;
+      str1 = "";
+    }
+  }
+  return result;
+}
+
+console.log(resversenewString("hello wrold"));
