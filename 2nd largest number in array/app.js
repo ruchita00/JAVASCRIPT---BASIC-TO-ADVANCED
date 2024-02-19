@@ -127,3 +127,17 @@ const array12 = [10, 5, 20, 8, 15];
 const { secondSmallest, secondLargest } = findSecondLargestAndSmallest(array12);
 console.log("Second smallest element:", secondSmallest); // Output: 8
 console.log("Second largest element:", secondLargest); // Output: 15
+
+function reverseString(str) {
+  const charactersArray = str.split("");
+
+  const reversedCharactersArray = charactersArray.reverse();
+
+  const reversedString = reversedCharactersArray.join("");
+
+  return reversedString;
+}
+
+const inputString = "Hello world!";
+const reversedString = reverseString(inputString);
+console.log("Reversed string:", reversedString);

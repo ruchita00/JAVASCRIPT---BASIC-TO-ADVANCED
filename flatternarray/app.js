@@ -18,3 +18,15 @@ function customFlat(arr, depth = 1) {
 }
 
 console.log(customFlat(arr, 2));
+
+function newCutom(arr, depth = 1) {
+  let result = [];
+  arr.forEach((arr) => {
+    if (isArray.Array(arr) && depth > 0) {
+      result.push(...newCutom(arr, depth - 1));
+    } else {
+      result.push(arr);
+    }
+  });
+  return result;
+}

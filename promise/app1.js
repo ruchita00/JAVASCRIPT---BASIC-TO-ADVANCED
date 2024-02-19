@@ -1,10 +1,9 @@
-//implement promise.all
-
-function customPromise1(text, time) {
+function showText(text, time) {
   return new Promise((resolve, reject) => {
     resolve(text);
   }, time);
 }
+//polyfill for promise
 
 function customPromise(promises) {
   let result = [];
@@ -20,7 +19,6 @@ function customPromise(promises) {
   });
 }
 
-const newPorm = Promise.all([
-  customPromise1("hello", 1000),
-  Promise.resolve("jo", 2000),
-]).then((res) => console.log(res));
+Promise.all([showText("hello", 1000), Promise.resolve("hi", 1000)]).then(
+  (res) => console.log(res)
+);
