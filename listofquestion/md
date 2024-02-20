@@ -1,0 +1,50 @@
+# coding
+- flat 
+- reverse string
+- factorial
+- find 2nd larget number and 2nd smallest number
+- ever or odd number
+- find the missing number
+- find the duplicate number from given array
+- find the prime number
+
+# Javascript
+- difference between let const var
+- difference between promise and callback
+- difference between promise and async/await
+- what is closure
+- what is hoisting
+- what is higher order function
+- what is pyramid doom or callback hell
+- what is currying 
+- what is event loop
+- what is the higher precident between fetch and setTimout
+- polyfill for map, filter reduce
+- explain call apply bind
+- polyfill for call apply bind
+- explain promise and its method
+- what is event delegation
+- what is arrow function and normal function
+- what is polyfill
+- what is shallow copy and deep copy
+- what is the purpose of array.reverse()
+- what are the es6 features
+- how js code works
+
+# React
+- what is usecallback and usememo
+- what is pure component
+- what is virtual dom?
+- what is higher order component
+- what is localstorage and session storage
+- why react is popular
+- difference between state and props
+
+# HTML
+- difference between state and props
+- what is purpose of docttype declaration
+
+# css
+- what is difference between display none and visibile hidden
+- difference between margin and padding
+- what is position relative and absolute used

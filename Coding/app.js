@@ -102,14 +102,14 @@ function newStr(str) {
   str = str + " ";
   let str1 = "";
   let result = "";
-
   for (let i = 0; i < str.length; i++) {
-    str = str[i] + str;
-    if (str1 === "") {
+    str1 = str[i] + str1;
+    if (str[i] === " ") {
       result = result + str1;
-      str1 = "";
+      str1 = " ";
     }
   }
+  return result;
 }
 
 console.log(newStr("hello world"));
