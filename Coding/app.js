@@ -85,13 +85,31 @@ console.log(missingValue(newArr));
 
 //fact
 
-const number = prompt("enter the number");
-var fact = 1;
-if (number < 0) {
-  console.log("fact is not possible");
-} else {
-  for (let i = 1; i <= number; i++) {
-    fact = fact * i;
+// const number = prompt("enter the number");
+// var fact = 1;
+// if (number < 0) {
+//   console.log("fact is not possible");
+// } else {
+//   for (let i = 1; i <= number; i++) {
+//     fact = fact * i;
+//   }
+//   console.log(`${number} is ${fact}`);
+// }
+
+//reverse string
+
+function newStr(str) {
+  str = str + " ";
+  let str1 = "";
+  let result = "";
+
+  for (let i = 0; i < str.length; i++) {
+    str = str[i] + str;
+    if (str1 === "") {
+      result = result + str1;
+      str1 = "";
+    }
   }
-  console.log(`${number} is ${fact}`);
 }
+
+console.log(newStr("hello world"));
