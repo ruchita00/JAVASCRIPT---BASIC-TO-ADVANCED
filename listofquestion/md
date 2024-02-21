@@ -39,6 +39,8 @@
 - what is localstorage and session storage
 - why react is popular
 - difference between state and props
+- how lifecycle works in class based component
+- how can we implement componentWillUnMount() in function component
 
 # HTML
 - difference between state and props

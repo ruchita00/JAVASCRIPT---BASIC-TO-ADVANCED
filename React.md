@@ -2,7 +2,6 @@
   - both the hooks are used to optimize performance in react functional components by memoizing values and preventing unnecessary re-renders.
 
 -  useCallback: 
-
    - the useCallback hook is used to memoize the callback in functional components 
    - it returns a memoized version of callback function that only changes if one of the dependencies has changed.
    - it is particularly used when passing callbacks to child components that rely on reference equality to prevent unnecessary re-renders.
@@ -104,15 +103,15 @@ console.log(theme); // Output: 'dark'
       - it identifies the minimal number of changes needed to update actual dom
     
     batch updated:
-      - react batches these changes together and updates the real dom only with the necessary modifications , rather than re-redning the entire page
+      - react batches these changes together and updates the real dom only with the necessary modifications , rather than re-redering the entire page
       this approach significantly improves performace as direct manipulation of the real dom can be slow and 
 
 
 # 6.why react is popular?
 
 - virtual dom:
-   - whenever we create react component reat build the virtual dom repersntation of dom elements that the component renders
-   - whwenver the chnages happens in state or props of component react contruct new virtual dom 
+   - whenever we create react component react build the virtual dom repersntation of dom elements that the component renders
+   - whenever the chanages happens in state or props of component react contruct new virtual dom 
    new vitrual dom compared with previous virtual dom and identifies the minimal changes to update the real dom this process is known as recolcilation process.
    - react batches these changes togther and update the real dom
 
@@ -152,11 +151,104 @@ console.log(theme); // Output: 'dark'
   - used to render dynamic content
 
 
+# 8 what is super contructor render function in raect js
+- super : is the bridge that connects a child class component to its parent class constructor allowing child class to inherit all the properties from the parent 
+
+- for instance consider a class Person that extends a class base. 
+to ensure that our person component can use the methods from its based class we need to cll super() inside constructor function of the class person
+
+class Person extends React.Compoent{
+  constructor(props){
+    super(props);
+  }
+}
+
+- constuctor: 
+  - the constructor is a method used to initilize an objects state in a class it automatically called during the creation of the object in a class
+  - the concep of constructor is same in react the constructor in a react compoent is called before the component is mounted
 
 
+  - when you implement the constructor for react component you need to call super(props method) before any other statement. 
+  - if you do not call super(props) method this.props will be undefined in the constructor.
+
+  contructor(props){
+    super(props)
+  }
+
+- render: 
+it represnt the jsx that represent the UI  of the component this function is called whenever the component needs to re-render due to changes in its state or props
 
 
+class Person extends React.Component{
+  constructor(){
+    super()
+  }
+  render(){
+    return(
+      <div>hello</div>
+          )
+  }
+}
+
+ How to optimize react app
+
+ - optimizing a react app involves serveral strategies aimed at imporving its performance user experience and code efficiency here are some common techniques
+
+- code splitting:  
+   - use react built in support for code splitting to spilt ur js bundle into smaller chunks that can be loaded asnchronously this can speed up the initial loading time of your app by only loading neccessary code for the current view.
+   exmaple: webpack, rollup
+
+- lazy loading:
+
+   - employ lazy loading to delay the loading of compoennts or resources that are not immediately needed when the app loads.
+   - this can further the reduce initial load time and improve percived performance
+
+- bundle size optimization:
+
+  - minify and compress you js css and other asses to renduce their size consideer using tools like webpack bundle anazlzer to indetify and eliminate unnecessary dependencies and optimise bundle size 
+
+- memoization and memoizing selectors:
+
+  use memoization techiniques( usememo,usecallback) to optimize rendering performance by preventing re-renders of components or re-computitions of expensive computations
+
+  - Server side rendering: consider implementing server side rendering to pre-render the initial html on the server and send it to the client which can imporove performce and seo
+
+  - optimize images and media:
+
+      - compress and optimize images and other media files to reuce their size without sancrifing quality consider lazy loading images that are not immedialty viisble on the screen
+  
 
 
+what is server side rendering?
+- react refers to the process of the rendering react compoenets ont he server side before sending html to clients broswer
+client browsers meaning donwloading js bundle execute it and render the ui
+however with ssr the server generates the html for give route and sends it to the client which can imporve performance and sea dn user experience in certain scenarious
+
+- here how ssr works
+- initial request: when user navigates to url in react application that supports ssr the server receives the request
+
+- sever side rendering : this server executes the react components corresponding to the requested route and generates te html markup for entire page
+
+sending html to client :
+once the html markup is generated the server sends it as the response to the client request.
+
+client side hydration: when the client receives the html from the server it also downloads the js bundles the js bundles includes same react comonent that were used for ssr
+
+rehydration: the js bundle rehydrates the html received from the server meaning that it attaches event handlers and  setup the neceesary js behavior this process allows react components to become interactive on the client side
+
+client side render: from this point on react applicaton behvaes like traditional client side rendere application handler user interaction and updates to the ui entierel on the client side
+
+ssr offers serveral benifits:
+improve performce
+better sco 
+enhanced user experience
+
+
+what is react router?
+react router is popluar library for handling routing in react applications it allows developers to manage navigation and url routing in react application by mapping url to specific components enabling the creation of single page application with multiple view pages
+
+what is react fragment
+
+a fragment is a lightweight wrapper that allows yout o group multiple elements together without adding extra nodes to the dom.
 
 
