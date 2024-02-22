@@ -187,3 +187,75 @@ function reversestr(str) {
 }
 
 console.log(reversestr("hello world"));
+
+//reverse str
+
+function newStr(str) {
+  let resverse = "";
+  for (let i = str.length - 1; i >= 0; i--) {
+    resverse = resverse + str[i];
+  }
+  return resverse;
+}
+
+console.log(newStr("hello world"));
+
+//reverse str
+
+function customNewStr(str) {
+  str = str + " ";
+  let str1 = "";
+  let res = "";
+
+  for (let i = 0; i < str.length; i++) {
+    str1 = str[i] + str1;
+    if (str[i] === " ") {
+      res = res + str1;
+      str1 = " ";
+    }
+  }
+  return res;
+}
+
+console.log(customNewStr("hello world"));
+
+//find the flat array
+
+let arr1 = [
+  [1, 2],
+  [3, 4],
+  [5, 6, [7, 8], 9],
+  [10, 11, 12],
+];
+
+function customFlatArray(arr, depth = 1) {
+  let res = [];
+  arr.forEach((arr) => {
+    if (Array.isArray(arr) && depth > 0) {
+      res.push(...customFlatArray(arr, depth - 1));
+    } else {
+      res.push(arr);
+    }
+  });
+  return res;
+}
+
+console.log(customFlatArray(arr1, 2));
+
+//find the prime number
+
+const number = prompt("enter the number");
+if (number == 1) {
+  console.log("composit neither prime ");
+} else if (number < 1) {
+  console.log("prime number is not possible");
+} else {
+  for (let i = 2; i < number; i++) {
+    if (number % i == 0) {
+      var resnew = `${number} is not prime number`;
+      break;
+    } else {
+      var resnew = `${number} is prime number`;
+    }
+  }
+}

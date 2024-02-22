@@ -88,3 +88,22 @@ if (num < 0) {
   }
   console.log(`${fact} is ${num}`);
 }
+
+// find the duplicate element from array
+
+const arrNumber = [1, 2, 3, 565, 7, 7, 8, 9, 9, 8];
+
+const duplicate = arrNumber.filter(
+  (ele, index, arr) => arr.indexOf(ele) !== index
+);
+console.log(duplicate);
+
+//find the sum of all the array
+const newSum = arrNumber.reduce((acc, curr) => {
+  return acc + curr;
+}, 0);
+console.log(newSum);
+
+//duplicate array
+const dup = arrNumber.filter((ele, index, arr) => arr.indexOf(ele) !== index);
+console.log(dup);
