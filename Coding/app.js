@@ -74,7 +74,7 @@ console.log(missingValue(newArr));
 // } else {
 //   for (let i = 2; i < number; i++) {
 //     if (number % i == 0) {
-//       var res = `${number} is not prime number`;
+//       var res1 = `${number} is not prime number`;
 //       break;
 //     } else {
 //       var res = `${number} is prime number`;
