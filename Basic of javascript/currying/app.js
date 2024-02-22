@@ -22,7 +22,8 @@ let newClo = function (x) {
 let newCl = newClo(2);
 newCl(8);
 
-//currying is techinque convert function which takes mulitple argument of function
+//currying is techinque convert function which takes mulitple argument 
+//of function
 // each takes a single arg
 
 //..currying takes multiple arg and split them into signle arg fucntion

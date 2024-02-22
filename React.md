@@ -207,6 +207,7 @@ class Person extends React.Component{
 
   - minify and compress you js css and other asses to renduce their size consideer using tools like webpack bundle anazlzer to indetify and eliminate unnecessary dependencies and optimise bundle size 
 
+
 - memoization and memoizing selectors:
 
   use memoization techiniques( usememo,usecallback) to optimize rendering performance by preventing re-renders of components or re-computitions of expensive computations
