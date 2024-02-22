@@ -113,3 +113,38 @@ function newStr(str) {
 }
 
 console.log(newStr("hello world"));
+
+//Square the number and sort in ascending order without inbuild methods
+const list = [-6, -3, -1, 2, 4, 5];
+// [ 36, 9, 1, 4, 16, 25 ]
+
+let result = [];
+for (let item of list) {
+  result.push(item * item);
+}
+for (let i = 1; i < result.length; i++) {
+  if (result[i] < result[i - 1]) {
+    result[i] = result[i] + result[i - 1];
+    result[i - 1] = result[i] - result[i - 1];
+    result[i] = result[i] - result[i - 1];
+    i = 0;
+  }
+}
+
+console.log(result);
+
+//find the duplicate of sqaure of array in assending order
+
+let res = [];
+for (let item of list) {
+  res.push(item * item);
+}
+for (let i = 1; i < res.length; i++) {
+  if (res[i] < res[i - 1]) {
+    res[i] = res[i] + res[i - 1];
+    res[i - 1] = res[i] - res[i - 1];
+    res[i] = res[i] - res[i - 1];
+    i = 0;
+  }
+}
+console.log(res);
