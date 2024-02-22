@@ -148,3 +148,42 @@ for (let i = 1; i < res.length; i++) {
   }
 }
 console.log(res);
+
+let arr = [
+  [1, 2],
+  [3, 4],
+  [5, 6, [7, 8], 9],
+  [10, 11, 12],
+];
+
+function customFlat(arr, depth = 1) {
+  let result = [];
+  arr.forEach((arr) => {
+    if (Array.isArray(arr) && depth > 0) {
+      result.push(...customFlat(arr, depth - 1));
+    } else {
+      result.push(arr);
+    }
+  });
+  return result;
+}
+
+console.log(customFlat(arr, 2));
+
+//reverse str
+
+function reversestr(str) {
+  str = str + " ";
+  let str1 = "";
+  let res = "";
+  for (let i = 0; i < str.length; i++) {
+    str1 = str[i] + str1;
+    if (str[i] === " ") {
+      res = res + str1;
+      str1 = " ";
+    }
+  }
+  return res;
+}
+
+console.log(reversestr("hello world"));
