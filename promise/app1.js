@@ -3,6 +3,14 @@ function showText(text, time) {
     resolve(text);
   }, time);
 }
+
+function showText(text,time){
+
+  return new Promise((resolve,reject){
+                    
+                    resolve(text);},time
+}
+  
 //polyfill for promise
 
 function customPromise(promises) {
@@ -18,6 +26,8 @@ function customPromise(promises) {
     });
   });
 }
+
+
 
 Promise.all([showText("hello", 1000), Promise.resolve("hi", 1000)]).then(
   (res) => console.log(res)
