@@ -1,0 +1,183 @@
+//1.find the flat
+
+let arr = [
+  [1, 2],
+  [3, 4],
+  [5, 6, [7, 8], 9],
+  [10, 11, 12],
+];
+
+function customFlat(arr, depth = 1) {
+  let result = [];
+  arr.forEach((arr) => {
+    if (Array.isArray(arr) && depth > 0) {
+      result.push(...customFlat(arr, depth - 1));
+    } else {
+      result.push(arr);
+    }
+  });
+  return result;
+}
+
+console.log(customFlat(arr, 2));
+
+//2.find the second largest number and second small number
+
+function findSecondLargeAndSmallNumber(arr) {
+  if (arr.length < 2) {
+    return "arr should have atleast 2 elements";
+  }
+  let largest = -Infinity;
+  let secondLargest = -Infinity;
+  let small = Infinity;
+  let secondSmall = Infinity;
+
+  for (let i = 0; i < arr.length; i++) {
+    if (arr[i] > largest) {
+      secondLargest = largest;
+      largest = arr[i];
+    } else if (arr[i] > secondLargest && arr[i] !== largest) {
+      secondLargest = arr[i];
+    }
+
+    if (arr[i] < small) {
+      secondSmall = small;
+      small = arr[i];
+    } else if (arr[i] < secondSmall && arr[i] !== small) {
+      secondSmall = arr[i];
+    }
+  }
+  return {
+    secondLargest:
+      secondLargest === -Infinity ? "all the elements are same" : secondLargest,
+    secondSmall:
+      secondSmall === Infinity ? "all the elements are same" : secondSmall,
+  };
+}
+
+const array = [1, 2, 3, 4, 5, 6, 7];
+const { secondLargest, secondSmall } = findSecondLargeAndSmallNumber(array);
+console.log("secondLargest", secondLargest, "secondSmall", secondSmall);
+
+// 3.find the reverse str
+
+function reverseStr(str) {
+  str = str + " ";
+  let str1 = " ";
+  let result = " ";
+
+  for (let i = 0; i < str.length; i++) {
+    str1 = str[i] + str1;
+    if (str[i] === " ") {
+      result = result + str1;
+      str1 = " ";
+    }
+  }
+  return result;
+}
+
+console.log(reverseStr("hello world"));
+
+//4.whether the given str is palindrome or not
+
+const str = prompt("enter the str");
+
+function checkPalindrome(str) {
+  let result = "";
+  for (i = str.length - 1; i >= 0; i--) {
+    result = result + str[i];
+  }
+  return result === str ? true : false;
+}
+
+console.log(checkPalindrome(str));
+
+//5.find the prime number
+
+const number = prompt("enter the number");
+
+if (number == 1) {
+  console.log("neither prime nor composite");
+} else if (number < 1) {
+  console.log("prime number is not possible");
+} else {
+  for (let i = 2; i < number; i++) {
+    if (number % 2 == 0) {
+      var res = `${number} is not prime number`;
+      break;
+    } else {
+      var res = `${number} is prime number`;
+    }
+  }
+  console.log(res);
+}
+
+//6.factorial
+
+const num = prompt("enter the number");
+let fact = 1;
+if (num < 1) {
+  console.log("fact is not possible");
+} else {
+  for (let i = 1; i <= num; i++) {
+    fact = fact * i;
+  }
+  console.log(fact);
+}
+
+const arrnum = [1, 2, 3, 3, 4, 4, 4, 5, 3, 2, 4, 4, 5, , 7, 7];
+
+const duplicate = arrnum.filter((ele, i, arr) => arr.indexOf(ele) !== i);
+console.log(duplicate);
+
+//7.find the largest and smallest number
+
+function findMinMax(arr) {
+  if (arr.length === 0) {
+    return "arr should grether than 0";
+  }
+
+  let min = arr[0];
+  let max = arr[0];
+
+  for (let i = 1; i < arr.length; i++) {
+    if (arr[i] > max) {
+      max = arr[i];
+    }
+    if (arr[i] < min) {
+      min = arr[i];
+    }
+  }
+  return { min, max };
+}
+
+const numb = [2, 3, 4, 5, 9, 6, 99];
+const resFind = findMinMax(numb);
+
+console.log(resFind.min, resFind.max);
+
+//8find the even and odd number
+
+const even = numb.filter((arr) => arr % 2 == 0);
+console.log(even);
+
+const odd = numb.filter((arr) => arr % 2 !== 0);
+console.log(odd);
+
+//9find the square of element in asending order
+
+const list = [0, 2, 4, 5, 6, 3];
+let newRes = [];
+for (let i of list) {
+  newRes.push(i * i);
+}
+
+for (let i = 1; i < list.length; i++) {
+  if (newRes[i] < newRes[i - 1]) {
+    newRes[i] = newRes[i] + newRes[i - 1];
+    newRes[i - 1] = newRes[i] - newRes[i - 1];
+    newRes[i] = newRes[i] + newRes[i - 1];
+    i = 0;
+  }
+}
+console.log(newRes);
